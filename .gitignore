@@ -131,3 +131,4 @@ dist
 
 # Code Sandbox files
 .codesandbox
+.vercel
