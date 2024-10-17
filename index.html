@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <script
@@ -72,17 +72,17 @@
                       class="dropdown-menu"
                     >
                       <a
-                        href="/rules"
+                        href="/rules.html"
                         data-rr-ui-dropdown-item
                         class="dropdown-item"
                         >Rules</a
                       ><a
-                        href="/faq"
+                        href="/faq.html"
                         data-rr-ui-dropdown-item
                         class="dropdown-item"
                         >FAQ</a
                       ><a
-                        href="/banappeal"
+                        href="/banappeal.html"
                         data-rr-ui-dropdown-item
                         class="dropdown-item"
                         >Ban Appeals</a
@@ -164,11 +164,7 @@
                           decoding="async"
                           data-nimg="1"
                           class="enlarge"
-                          srcset="
-                            https://images.sounddrout.workers.dev?width=64&amp;quality=75&amp;image=https://sounddrout.com/svg/YouTube_light_icon.svg  1x,
-                            https://images.sounddrout.workers.dev?width=128&amp;quality=75&amp;image=https://sounddrout.com/svg/YouTube_light_icon.svg 2x
-                          "
-                          src="https://images.sounddrout.workers.dev?width=128&amp;quality=75&amp;image=https://sounddrout.com/svg/YouTube_light_icon.svg"
+                          src="svg/YouTube_light_icon.svg"
                           style="
                             color: transparent;
                             margin-bottom: 1rem;
@@ -182,11 +178,7 @@
                           decoding="async"
                           data-nimg="1"
                           class="enlarge"
-                          srcset="
-                            https://images.sounddrout.workers.dev?width=96&amp;quality=75&amp;image=https://sounddrout.com/svg/Discord-Logo-White.svg   1x,
-                            https://images.sounddrout.workers.dev?width=256&amp;quality=75&amp;image=https://sounddrount.com/svg/Discord-Logo-White.svg 2x
-                          "
-                          src="https://images.sounddrout.workers.dev?width=256&amp;quality=75&amp;image=https://sounddrout.com/svg/Discord-Logo-White.svg"
+                          src="svg/Discord-Logo-White.svg"
                           style="color: transparent" /></a
                     ></span>
                   </div>
@@ -356,7 +348,7 @@
             navbarCollapse.style.height = "0px";
             navbarCollapse.setAttribute(
               "class",
-              "navbar-collapse " + p.COLLAPSING,
+              "navbar-collapse " + p.COLLAPSING
             );
             setTimeout(function () {
               navbarCollapse.style.height = `${navbarCollapse.scrollHeight}px`;
@@ -365,7 +357,7 @@
             navbarCollapse.style.height = `${navbarCollapse.scrollHeight}px`;
             navbarCollapse.setAttribute(
               "class",
-              "navbar-collapse " + p.COLLAPSING,
+              "navbar-collapse " + p.COLLAPSING
             );
             setTimeout(function () {
               navbarCollapse.style.height = "0px";
@@ -377,13 +369,13 @@
           if (navbarCollapse.style.height != "0px") {
             navbarCollapse.setAttribute(
               "class",
-              "navbar-collapse " + p.COLLAPSE_SHOW,
+              "navbar-collapse " + p.COLLAPSE_SHOW
             );
             navbarCollapse.style.height = "";
           } else if (navbarCollapse.style.height == "0px") {
             navbarCollapse.setAttribute(
               "class",
-              "navbar-collapse " + p.COLLAPSE,
+              "navbar-collapse " + p.COLLAPSE
             );
             navbarCollapse.style.height = "";
           }
