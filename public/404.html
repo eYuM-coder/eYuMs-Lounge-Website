@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -68,17 +68,17 @@
                       class="dropdown-menu"
                     >
                       <a
-                        href="/rules"
+                        href="/rules.html"
                         data-rr-ui-dropdown-item
                         class="dropdown-item"
                         >Rules</a
                       ><a
-                        href="/faq"
+                        href="/faq.html"
                         data-rr-ui-dropdown-item
                         class="dropdown-item"
                         >FAQ</a
                       ><a
-                        href="/banappeal"
+                        href="/banappeal.html"
                         data-rr-ui-dropdown-item
                         class="dropdown-item"
                         >Ban Appeals</a
@@ -132,9 +132,8 @@
       </header>
       <div
         style="
-          font-family: system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial,
-            sans-serif, &quot;Apple Color Emoji&quot;,
-            &quot;Segoe UI Emoji&quot;;
+          font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial,
+            sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
           height: 100vh;
           text-align: center;
           display: flex;
@@ -284,7 +283,7 @@
             navbarCollapse.style.height = "0px";
             navbarCollapse.setAttribute(
               "class",
-              "navbar-collapse " + p.COLLAPSING,
+              "navbar-collapse " + p.COLLAPSING
             );
             setTimeout(function () {
               navbarCollapse.style.height = `${navbarCollapse.scrollHeight}px`;
@@ -293,7 +292,7 @@
             navbarCollapse.style.height = `${navbarCollapse.scrollHeight}px`;
             navbarCollapse.setAttribute(
               "class",
-              "navbar-collapse " + p.COLLAPSING,
+              "navbar-collapse " + p.COLLAPSING
             );
             setTimeout(function () {
               navbarCollapse.style.height = "0px";
@@ -305,13 +304,13 @@
           if (navbarCollapse.style.height != "0px") {
             navbarCollapse.setAttribute(
               "class",
-              "navbar-collapse " + p.COLLAPSE_SHOW,
+              "navbar-collapse " + p.COLLAPSE_SHOW
             );
             navbarCollapse.style.height = "";
           } else if (navbarCollapse.style.height == "0px") {
             navbarCollapse.setAttribute(
               "class",
-              "navbar-collapse " + p.COLLAPSE,
+              "navbar-collapse " + p.COLLAPSE
             );
             navbarCollapse.style.height = "";
           }
