@@ -1,0 +1,7 @@
+{
+    "rewrites": [
+        { "source": "/", "destiation": "/index.html" },
+        { "source": "/rules", "destiation": "/rules.html" },
+        { "source": "/banappeal", "destiation": "/banappel.html" }
+    ]
+}
