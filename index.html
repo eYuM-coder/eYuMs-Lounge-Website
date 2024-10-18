@@ -145,8 +145,7 @@
                 <div class="row justify-content-center text-center">
                   <div class="col-12 col-md-10 col-lg-10">
                     <h1 class="display-4 mb-3 text-white">
-                      <span id="typed" class="typed font-weight-600"></span
-                      ><span class="ityped-cursor">|</span>
+                      <span id="typed" class="typed font-weight-600"></span>
                     </h1>
                     <p class="lead mb-5 text-white">
                       Subscribe to eYuM
@@ -328,6 +327,86 @@
       </footer>
     </div>
     <script>
+      function setProps({
+        strings = ["Put your strings here...", "and Enjoy!"],
+        typeSpeed = 100,
+        backSpeed = 50,
+        backDelay = 500,
+        startDelay = 500,
+        cursorChar = "|",
+        placeholder = false,
+        showCursor = true,
+        disableBackTyping = false,
+        loop = true,
+        onFinished = function () {},
+      } = {}) {
+        return {
+          strings,
+          typeSpeed,
+          backSpeed,
+          cursorChar,
+          backDelay,
+          placeholder,
+          startDelay,
+          showCursor,
+          loop,
+          disableBackTyping,
+          onFinished,
+        };
+      }
+
+      function init(element, options) {
+        let settings = setProps(options);
+        let strings = settings.strings;
+        let stringIndex = 0;
+        let charIndex = 0;
+        let typingInterval, erasingInterval;
+
+        function typeString() {
+          let currentString = strings[stringIndex];
+          typingInterval = setInterval(() => {
+            if (charIndex < currentString.length) {
+              element.textContent += currentString[charIndex];
+              charIndex++;
+            } else {
+              clearInterval(typingInterval);
+              setTimeout(eraseString, settings.backDelay);
+            }
+          }, settings.typeSpeed);
+        }
+
+        function eraseString() {
+          erasingInterval = setInterval(() => {
+            if (charIndex > 0) {
+              element.textContent = element.textContent.slice(0, charIndex - 1);
+              charIndex;
+            } else {
+              clearInterval(erasingInterval);
+              stringIndex = (stringIndex + 1) % strings.length;
+              setTimeout(typeString, settings.startDelay);
+            }
+          }, settings.backSpeed);
+        }
+
+        if (settings.showCursor) {
+          let cursor = document.createElement("span");
+          cursor.classList.add("ityped-cursor");
+          cursor.textContent = settings.cursorChar;
+          element.after(cursor);
+        }
+
+        setTimeout(typeString, settings.startDelay);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let element = document.getElementById("typed");
+        init(element, {
+          strings: ["Subscribe to eYuM.", "Join eYuM's Lounge!", "Enjoy."],
+          typeSpeed: 150,
+          backSpeed: 50,
+          loop: true,
+        });
+      });
       document.addEventListener("DOMContentLoaded", function () {
         const toggler = document.querySelector(".navbar-toggler");
         const navbarCollapse = document.getElementById("responsive-navbar-nav");
