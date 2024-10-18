@@ -379,7 +379,7 @@
           erasingInterval = setInterval(() => {
             if (charIndex > 0) {
               element.textContent = element.textContent.slice(0, charIndex - 1);
-              charIndex;
+              charIndex--;
             } else {
               clearInterval(erasingInterval);
               stringIndex = (stringIndex + 1) % strings.length;
